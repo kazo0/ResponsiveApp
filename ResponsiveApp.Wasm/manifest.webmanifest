@@ -1,0 +1,10 @@
+{
+  "background_color": "#ffffff",
+  "description": "ResponsiveApp",
+  "display": "standalone",
+  "name": "ResponsiveApp",
+  "short_name": "ResponsiveApp",
+  "start_url": "/index.html",
+  "theme_color": "#ffffff",
+  "scope": "/"
+}

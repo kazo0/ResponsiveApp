@@ -1,0 +1,10 @@
+{
+	"profiles": {
+		"ResponsiveApp.Windows (Unpackaged)": {
+			"commandName": "Project"
+		},
+		"ResponsiveApp.Windows (Package)": {
+			"commandName": "MsixPackage"
+		}
+	}
+}

@@ -1,0 +1,50 @@
+﻿<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+      xmlns:local="using:ResponsiveApp"
+      xmlns:utu="using:Uno.Toolkit.UI" 
+      x:Class="ResponsiveApp.MainPage" 
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+  <utu:ResponsiveView>
+    <utu:ResponsiveView.NarrowestTemplate>
+      <DataTemplate>
+        <Grid Background="Red">
+          <TextBlock TextWrapping="WrapWholeWords" 
+                     Text="Narrowest Template" 
+                     FontSize="32"/>
+        </Grid>
+      </DataTemplate>
+    </utu:ResponsiveView.NarrowestTemplate>
+    <utu:ResponsiveView.NarrowTemplate>
+      <DataTemplate>
+        <Grid Background="Green">
+          <TextBlock Text="Narrow Template" 
+                     FontSize="32"/>
+        </Grid>
+      </DataTemplate>
+    </utu:ResponsiveView.NarrowTemplate>
+    <utu:ResponsiveView.NormalTemplate>
+      <DataTemplate>
+        <Grid Background="Blue">
+          <TextBlock Text="Normal Template" 
+                     FontSize="32"/>
+        </Grid>
+      </DataTemplate>
+    </utu:ResponsiveView.NormalTemplate>
+    <utu:ResponsiveView.WideTemplate>
+      <DataTemplate>
+        <Grid Background="Purple">
+          <TextBlock Text="Wide Template" 
+                     FontSize="32"/>
+        </Grid>
+      </DataTemplate>
+    </utu:ResponsiveView.WideTemplate>
+    <utu:ResponsiveView.WidestTemplate>
+      <DataTemplate>
+        <Grid Background="Orange">
+          <TextBlock Text="Widest Template" 
+                     FontSize="32"/>
+        </Grid>
+      </DataTemplate>
+    </utu:ResponsiveView.WidestTemplate>
+  </utu:ResponsiveView>
+</Page>
