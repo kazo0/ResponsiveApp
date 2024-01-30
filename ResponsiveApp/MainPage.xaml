@@ -5,6 +5,9 @@
       x:Class="ResponsiveApp.MainPage"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <utu:ResponsiveView>
+        <!-- <utu:ResponsiveView.ResponsiveLayout>
+            <utu:ResponsiveLayout Narrowest="0" Narrow="0" Normal="0" Wide="100" Widest="1200" />
+        </utu:ResponsiveView.ResponsiveLayout> -->
         <utu:ResponsiveView.NarrowestTemplate>
             <DataTemplate>
                 <Grid Background="Red">
@@ -47,4 +50,10 @@
             </DataTemplate>
         </utu:ResponsiveView.WidestTemplate>
     </utu:ResponsiveView>
+
+    <!-- <Grid Background="{utu:Responsive Narrowest=Red, Narrow=Green, Normal=Blue, Wide=Purple, Widest=Orange}">
+        <TextBlock TextWrapping="WrapWholeWords"
+                    Text="{utu:Responsive Narrowest='Narrowest', Narrow='Narrow', Normal='Normal', Wide='Wide', Widest='Widest'}"
+                    FontSize="32" />
+    </Grid> -->
 </Page>
