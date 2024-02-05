@@ -4,23 +4,17 @@
       xmlns:utu="using:Uno.Toolkit.UI"
       x:Class="ResponsiveApp.MainPage"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <utu:ResponsiveView>
-        <!-- <utu:ResponsiveView.ResponsiveLayout>
-            <utu:ResponsiveLayout Narrowest="0" Narrow="0" Normal="0" Wide="100" Widest="1200" />
-        </utu:ResponsiveView.ResponsiveLayout> -->
-        <utu:ResponsiveView.NarrowestTemplate>
-            <DataTemplate>
-                <Grid Background="Red">
-                    <TextBlock TextWrapping="WrapWholeWords"
-                               Text="Narrowest Template"
-                               FontSize="32" />
-                </Grid>
-            </DataTemplate>
-        </utu:ResponsiveView.NarrowestTemplate>
+      <Page.Resources>
+        <RotateTransform x:Key="NarrowRotation" Angle="0"/>
+        <RotateTransform x:Key="NormalRotation" Angle="90"/>
+        <RotateTransform x:Key="WideRotation" Angle="180"/>
+        <RotateTransform x:Key="WidestRotation" Angle="270"/>
+      </Page.Resources>
+    <!-- <utu:ResponsiveView>
         <utu:ResponsiveView.NarrowTemplate>
             <DataTemplate>
                 <Grid Background="Green">
-                    <TextBlock Text="Narrow Template"
+                    <TextBlock Text="Narrow"
                                FontSize="32" />
                 </Grid>
             </DataTemplate>
@@ -28,7 +22,7 @@
         <utu:ResponsiveView.NormalTemplate>
             <DataTemplate>
                 <Grid Background="Blue">
-                    <TextBlock Text="Normal Template"
+                    <TextBlock Text="Normal"
                                FontSize="32" />
                 </Grid>
             </DataTemplate>
@@ -36,7 +30,7 @@
         <utu:ResponsiveView.WideTemplate>
             <DataTemplate>
                 <Grid Background="Purple">
-                    <TextBlock Text="Wide Template"
+                    <TextBlock Text="Wide"
                                FontSize="32" />
                 </Grid>
             </DataTemplate>
@@ -44,16 +38,25 @@
         <utu:ResponsiveView.WidestTemplate>
             <DataTemplate>
                 <Grid Background="Orange">
-                    <TextBlock Text="Widest Template"
+                    <TextBlock Text="Widest"
                                FontSize="32" />
                 </Grid>
             </DataTemplate>
         </utu:ResponsiveView.WidestTemplate>
-    </utu:ResponsiveView>
+    </utu:ResponsiveView> -->
 
-    <!-- <Grid Background="{utu:Responsive Narrowest=Red, Narrow=Green, Normal=Blue, Wide=Purple, Widest=Orange}">
+    <Grid Background="{utu:Responsive Narrow=Green, Normal=Blue, Wide=Purple, Widest=Orange}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
         <TextBlock TextWrapping="WrapWholeWords"
-                    Text="{utu:Responsive Narrowest='Narrowest', Narrow='Narrow', Normal='Normal', Wide='Wide', Widest='Widest'}"
-                    FontSize="32" />
-    </Grid> -->
+                Text="{utu:Responsive Narrow='Narrow', Normal='Normal', Wide='Wide', Widest='Widest'}"
+                FontSize="32" />
+        <Image Source="ms-appx:///ResponsiveApp/Assets/steve.png"
+               Grid.Row="1"
+               RenderTransformOrigin="0.5,0.5"
+               RenderTransform="{utu:Responsive Narrow={StaticResource NarrowRotation}, Normal={StaticResource NormalRotation}, Wide={StaticResource WideRotation}, Widest={StaticResource WidestRotation}}"
+               Width="200" />
+    </Grid>
 </Page>
