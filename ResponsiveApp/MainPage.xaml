@@ -4,56 +4,51 @@
       xmlns:utu="using:Uno.Toolkit.UI"
       x:Class="ResponsiveApp.MainPage"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <utu:ResponsiveView>
-        <!-- <utu:ResponsiveView.ResponsiveLayout>
-            <utu:ResponsiveLayout Narrowest="0" Narrow="0" Normal="0" Wide="100" Widest="1200" />
-        </utu:ResponsiveView.ResponsiveLayout> -->
-        <utu:ResponsiveView.NarrowestTemplate>
-            <DataTemplate>
-                <Grid Background="Red">
-                    <TextBlock TextWrapping="WrapWholeWords"
-                               Text="Narrowest Template"
-                               FontSize="32" />
-                </Grid>
-            </DataTemplate>
-        </utu:ResponsiveView.NarrowestTemplate>
-        <utu:ResponsiveView.NarrowTemplate>
-            <DataTemplate>
-                <Grid Background="Green">
-                    <TextBlock Text="Narrow Template"
-                               FontSize="32" />
-                </Grid>
-            </DataTemplate>
-        </utu:ResponsiveView.NarrowTemplate>
-        <utu:ResponsiveView.NormalTemplate>
-            <DataTemplate>
-                <Grid Background="Blue">
-                    <TextBlock Text="Normal Template"
-                               FontSize="32" />
-                </Grid>
-            </DataTemplate>
-        </utu:ResponsiveView.NormalTemplate>
-        <utu:ResponsiveView.WideTemplate>
-            <DataTemplate>
-                <Grid Background="Purple">
-                    <TextBlock Text="Wide Template"
-                               FontSize="32" />
-                </Grid>
-            </DataTemplate>
-        </utu:ResponsiveView.WideTemplate>
-        <utu:ResponsiveView.WidestTemplate>
-            <DataTemplate>
-                <Grid Background="Orange">
-                    <TextBlock Text="Widest Template"
-                               FontSize="32" />
-                </Grid>
-            </DataTemplate>
-        </utu:ResponsiveView.WidestTemplate>
-    </utu:ResponsiveView>
 
-    <!-- <Grid Background="{utu:Responsive Narrowest=Red, Narrow=Green, Normal=Blue, Wide=Purple, Widest=Orange}">
-        <TextBlock TextWrapping="WrapWholeWords"
-                    Text="{utu:Responsive Narrowest='Narrowest', Narrow='Narrow', Normal='Normal', Wide='Wide', Widest='Widest'}"
-                    FontSize="32" />
-    </Grid> -->
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup>
+            <VisualState>
+                <VisualState.StateTriggers>
+                    <AdaptiveTrigger MinWindowWidth="0" />
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <Setter Target="myGrid.Background" Value="Green" />
+                    <Setter Target="myText.Text" Value="Narrow" />
+                </VisualState.Setters>
+            </VisualState>
+            <VisualState>
+                <VisualState.StateTriggers>
+                    <AdaptiveTrigger MinWindowWidth="600" />
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <Setter Target="myGrid.Background" Value="Blue" />
+                    <Setter Target="myText.Text" Value="Normal" />
+                </VisualState.Setters>
+            </VisualState>
+            <VisualState>
+                <VisualState.StateTriggers>
+                    <AdaptiveTrigger MinWindowWidth="800" />
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <Setter Target="myGrid.Background" Value="Purple" />
+                    <Setter Target="myText.Text" Value="Wide" />
+                </VisualState.Setters>
+            </VisualState>
+            <VisualState>
+                <VisualState.StateTriggers>
+                    <AdaptiveTrigger MinWindowWidth="1080" />
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <Setter Target="myGrid.Background" Value="Orange" />
+                    <Setter Target="myText.Text" Value="Widest" />
+                </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+
+    <Grid x:Name="myGrid">
+        <TextBlock x:Name="myText"
+                   FontSize="32" />
+    </Grid>
+
 </Page>
