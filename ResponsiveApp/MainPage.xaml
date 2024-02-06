@@ -4,56 +4,9 @@
       xmlns:utu="using:Uno.Toolkit.UI"
       x:Class="ResponsiveApp.MainPage"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <utu:ResponsiveView>
-        <!-- <utu:ResponsiveView.ResponsiveLayout>
-            <utu:ResponsiveLayout Narrowest="0" Narrow="0" Normal="0" Wide="100" Widest="1200" />
-        </utu:ResponsiveView.ResponsiveLayout> -->
-        <utu:ResponsiveView.NarrowestTemplate>
-            <DataTemplate>
-                <Grid Background="Red">
-                    <TextBlock TextWrapping="WrapWholeWords"
-                               Text="Narrowest Template"
-                               FontSize="32" />
-                </Grid>
-            </DataTemplate>
-        </utu:ResponsiveView.NarrowestTemplate>
-        <utu:ResponsiveView.NarrowTemplate>
-            <DataTemplate>
-                <Grid Background="Green">
-                    <TextBlock Text="Narrow Template"
-                               FontSize="32" />
-                </Grid>
-            </DataTemplate>
-        </utu:ResponsiveView.NarrowTemplate>
-        <utu:ResponsiveView.NormalTemplate>
-            <DataTemplate>
-                <Grid Background="Blue">
-                    <TextBlock Text="Normal Template"
-                               FontSize="32" />
-                </Grid>
-            </DataTemplate>
-        </utu:ResponsiveView.NormalTemplate>
-        <utu:ResponsiveView.WideTemplate>
-            <DataTemplate>
-                <Grid Background="Purple">
-                    <TextBlock Text="Wide Template"
-                               FontSize="32" />
-                </Grid>
-            </DataTemplate>
-        </utu:ResponsiveView.WideTemplate>
-        <utu:ResponsiveView.WidestTemplate>
-            <DataTemplate>
-                <Grid Background="Orange">
-                    <TextBlock Text="Widest Template"
-                               FontSize="32" />
-                </Grid>
-            </DataTemplate>
-        </utu:ResponsiveView.WidestTemplate>
-    </utu:ResponsiveView>
 
-    <!-- <Grid Background="{utu:Responsive Narrowest=Red, Narrow=Green, Normal=Blue, Wide=Purple, Widest=Orange}">
-        <TextBlock TextWrapping="WrapWholeWords"
-                    Text="{utu:Responsive Narrowest='Narrowest', Narrow='Narrow', Normal='Normal', Wide='Wide', Widest='Widest'}"
-                    FontSize="32" />
-    </Grid> -->
+	<Grid Background="{utu:Responsive Narrow=Green, Normal=Blue, Wide=Purple, Widest=Orange}">
+        <TextBlock Text="{utu:Responsive Narrow='Narrow', Normal='Normal', Wide='Wide', Widest='Widest'}"
+                   FontSize="32" />
+    </Grid> 
 </Page>
