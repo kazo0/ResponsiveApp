@@ -4,21 +4,21 @@
       xmlns:utu="using:Uno.Toolkit.UI"
       x:Class="ResponsiveApp.MainPage"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-	<Page.Resources>
-		<RotateTransform x:Key="NarrowRotation" Angle="0"/>
-		<RotateTransform x:Key="NormalRotation" Angle="90"/>
-		<RotateTransform x:Key="WideRotation" Angle="180"/>
-		<RotateTransform x:Key="WidestRotation" Angle="270"/>
-	</Page.Resources>
+    <Page.Resources>
+        <RotateTransform x:Key="NarrowRotation" Angle="0" />
+        <RotateTransform x:Key="NormalRotation" Angle="90" />
+        <RotateTransform x:Key="WideRotation" Angle="180" />
+        <RotateTransform x:Key="WidestRotation" Angle="270" />
+    </Page.Resources>
 
-	<Grid Background="{utu:Responsive Narrow=Green, Normal=Blue, Wide=Purple, Widest=Orange}">
+    <Grid Background="{utu:Responsive Narrow=Green, Normal=Blue, Wide=Purple, Widest=Orange}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <TextBlock TextWrapping="WrapWholeWords"
-                Text="{utu:Responsive Narrow='Narrow', Normal='Normal', Wide='Wide', Widest='Widest'}"
-                FontSize="32" />
+                   Text="{utu:Responsive Narrow='Narrow', Normal='Normal', Wide='Wide', Widest='Widest'}"
+                   FontSize="32" />
         <Image Source="ms-appx:///ResponsiveApp/Assets/steve.png"
                Grid.Row="1"
                RenderTransformOrigin="0.5,0.5"
